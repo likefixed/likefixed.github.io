@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+ <title>计算学分绩点</title>
+ <meta charset="utf-8" />
+<style>
+/* 设置网页主体颜色 */
+ body {
+	background-color: #EEEEEE;
+	color: black;
+}
+/* 表格 */
+table {
+	border-collapse: collapse;
+	width: 100%;
+	color: #333;
+	font-family: Arial, sans-serif;
+	background-color: #fff;
+	box-shadow: 0px 0px 5px #666;
+	font-size: 10px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+ th, td {
+	padding: 15px;
+	border: 1px solid #ddd;
+	vertical-align: center;
+	text-align: left;
+}
+ th {
+	background-color: #28a745;
+	color: #fff;
+}
+ tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+	</style>
+</head>
+<body>
+ <h1 style="text-align: center;">学分绩点计算器</h1>
+ <h4 style="text-align: center;">绩点计算说明</h4>
+<p style="text-align: left; font-size: 13px;" >
+1. 课程考核成绩的绩点 = (课程考核百分制成绩 - 50) * 0.1 ，课程考核百分制成绩 60 分以下绩点为 0 。
+</br>2. 课程的学分绩点 = 课程考核成绩的绩点 * 该课程的学分数。</br>
+3. 平均学生绩点 = 各门课程的学分绩点之和 / 各门课程的学分之和。
+</p>
+ <table>
+  <thead>
+	<tr>
+	 <th>课程名称</th>
+	 <th>成绩</th>
+	 <th>学分</th>
+	 <th>绩点</th>
+	</tr>
+  </thead>
+  <tbody>
+ 
+	<tr>
+	 <td>大学英语（一）</td>
+	 <td><input  type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="4.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>思想道德修养与法律基础</td>
+	 <td><input  type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="3" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>计算机应用基础</td>
+	 <td><input  type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="2.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+	<tr>
+
+	 <td>军事理论与技能</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="2" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>形势与政策(2020上)</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="0.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>人体形态学</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="4.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>护理学导论</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="1.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>中医学基础</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="3" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>大学生心理健康教育</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="1" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>大学生安全教育</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="0.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>生理学</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="3" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>	毛泽东思想和中国特色社会主义理论体系概论</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="6" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>中国近代史纲要</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="3" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>大学英语（二）</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="4.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>公共体育（大一）</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="4" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>形势与政策(2020下)</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="0.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>医学免疫学与微生物学</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="3" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>推拿手法学</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="2" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>护理礼仪与人际沟通</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="2.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>临床营养学</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="2.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>中医养生与食疗</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="3" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>音乐欣赏</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="1.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>舞蹈基础训练</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="1" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>形势与政策(2021上)</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="0.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>护理学基础（I）</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>健康评估</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>马克思主义基本原理</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="3" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>公共体育（大二）</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>形势与政策(2021下)</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="0.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>基础药理学</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="3" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>病理与病理生理学</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="3" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>护理伦理学与卫生法规</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="1.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>中医护理学</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="2" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>临床护理英语实践</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="2.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>基础护理学（II）</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>内科护理学I</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="4" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>外科护理学I</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="3.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>老年病护理学</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="2" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>护理心理学</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="2" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>护理研究</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="1.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>形势与政策(2022上)</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="0.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>妇产科护理学</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="4" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>内科护理学II</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="3.5" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>精神科护理学</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="2" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>儿科护理学</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="4" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>急重症护理学</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="3" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>医学统计学</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="2" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+	<tr>
+	 <td>护理管理学</td>
+	 <td><input type="number" step="1" min="0" max="100" value="0" ></td>
+	 <td><input type="number" step="0.1" min="0" max="10" value="2" ></td>
+	 <td><input type="number" style="align: left;"></td>
+	</tr>
+
+
+	</tbody>
+</table>
+	<button onclick="saveData()">保存所有记录过的信息</button>
+	<button onclick="calculate()">计算平均绩点</button>
+<div>平均绩点为: <span id="result"></span></div>
+
+<script type="text/javascript">
+function saveData() {
+  var inputs = document.getElementsByTagName('input');
+  var data = [];
+  for (var i = 0; i < inputs.length; i++) {
+    data.push(inputs[i].value);
+  }
+  localStorage.setItem('formData', JSON.stringify(data));
+}
+
+window.onload = function() {
+  var formData = localStorage.getItem('formData');
+  if (formData) {
+    var data = JSON.parse(formData);
+    var inputs = document.getElementsByTagName('input');
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].value = data[i];
+    }
+  }
+}
+</script>
+
+<script type="text/javascript">
+  function calculate() {
+	var creditSum = 0;
+	var gradePointSum = 0;
+	var rows = document.querySelectorAll("tbody tr");
+	for (var i = 0; i < rows.length; i++) {
+	 var credit = parseFloat(rows[i].querySelectorAll("input")[1].value);
+	 var grade = parseInt(rows[i].querySelectorAll("input")[0].value);
+	 var gradePoint = (grade < 60) ? 0 : (grade - 50) * 0.1;
+	 rows[i].querySelectorAll("input")[2].value = gradePoint.toFixed(2);
+	 creditSum += credit;
+	 gradePointSum += credit * gradePoint;
+	}
+	var result = (gradePointSum / creditSum).toFixed(2);
+	document.querySelector("#result").innerHTML = result;
+	alert("平均绩点为: "+result+" ");
+  }
+ </script>
+</body>
+</html>
